@@ -1,0 +1,112 @@
+.login__cantainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    gap: 10px;
+}
+
+input[type="email"],input[type="password"] {
+    padding: 10px;
+    border: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 400px;
+    height: 50px
+}
+
+hr{
+    border: 1px solid rgb(204, 194, 194);
+    width: 70%;
+}
+
+.login_button{
+    background-color: rgb(252, 0, 117);
+    color: rgb(255, 255, 255);
+    padding: 14px;
+    border-radius: 28px;
+    width:150px;
+    border: none;
+    font-weight: bold;
+}
+
+.action_button{
+    width: 400px;
+    justify-content: space-between;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+}
+
+#rememberme::before {
+    background: #1ed760;
+    width: 25px;
+}
+
+.clsbutton{
+    width: 40%;
+     height: 50px; 
+     border-radius: 28px;
+     background-color: black;
+     color: rgb(255, 255, 255);
+     border: 1px solid rgb(90, 90, 90);
+     font-size: 14px;
+     font-weight: bold;
+     margin: 5px;
+}
+.clsbutton:hover{
+    color: rgb(255, 255, 255);
+    background-color: black;
+    border: 1px solid rgb(248, 248, 248);
+}
+
+.card {
+    width: 70%;
+    height: 200vh;
+    background-color: black;
+    margin: 0 auto; 
+   margin-top: 6%;
+    align-items: center; 
+    padding: 10px;
+}
+label{
+    color: white;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.clsbuttonn{
+    width: 40%;
+     height: 50px; 
+     border-radius: 28px;
+     background-color: black;
+     color: rgb(255, 255, 255);
+     border: 1px solid rgb(90, 90, 90);
+     font-size: 14px;
+     font-weight: bold;
+     margin: 5px;
+}
+.clsbutton {
+    display: flex;
+    align-items: center;
+}
+
+.button-content {
+    display: flex;
+    align-items: center;
+    gap: 18px; /* Adjust the gap as needed */
+padding: 20px;}
+
+.clsbuttonn:hover{
+    color: rgb(255, 255, 255);
+    background-color:  rgb(252, 0, 117);;
+   
+}
+
+.spotify__top-nav {
+    width: 100%;
+    height: 74px;
+    background: black;
+    position: fixed;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

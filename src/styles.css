@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    overflow: hidden;
+}
+
+body {
+    background-color: #191919 !important;
+  }
+  
+  .black-snackbar{
+    background: rgb(196, 0, 0) !important;
+    color: white !important;
+}
+
+.green-snackbar{
+    background:rgb(0, 170, 0) !important;
+    color: white !important;
+    
+}
+
+.dialog-content {
+    overflow-y: auto;
+  }

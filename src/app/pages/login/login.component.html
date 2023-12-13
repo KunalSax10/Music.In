@@ -1,0 +1,70 @@
+<nav  class="spotify__top-nav">
+    <img src="assets/images/musicc.svg" alt="logo" routerLink="/"  width="180" style="margin-top: 20px; margin-left: 7px;">
+</nav>
+<div class="container">
+    <div class="card">
+        <h2 style="color: white; margin-top: 5px; ">Login in to Music.In</h2>
+        <hr>
+        <button class="clsbutton">
+            <div class="button-content">
+                <img src="assets/images/google.png" alt="Google Icon" width="24" height="22">
+                <span [matTooltip]="'Sign in with your Google account'">Continue with Google</span>
+            </div>
+        </button>
+
+        <button class="clsbutton">
+            <div class="button-content">
+                <img src="assets/images/fb.png" alt="Facebook Icon" width="25" height="28">
+                <span [matTooltip]="'Sign in with your Facebook account'">Continue with Facebook</span>
+            </div>
+        </button>
+
+        <button class="clsbutton">
+            <div class="button-content">
+                <img src="assets/images/applee.png" alt="Apple Icon" width="24" height="22">
+                <span   [matTooltip]="'Sign in with your Apple account'">Continue with Apple</span>
+            </div>
+        </button>
+
+        <button class="clsbutton">
+            <div class="button-content">
+                <img src="   ">
+                <span  [matTooltip]="'Sign in with your Mobile Number'">Continue with Mobile Number</span>
+            </div>
+        </button>
+        <hr>
+        <div class="login__container">
+            <form [formGroup]="LoginForm">
+                <div>
+                    <label><strong>Email or username</strong></label><br>
+                    <input type="email" formControlName="email" placeholder="Email address or username">
+                    <div *ngIf="LoginForm.controls['email'].invalid && (LoginForm.controls['email'].dirty || LoginForm.controls['email'].touched)" class="text-danger">
+                        <div *ngIf="LoginForm.controls['email'].errors?.['required']">Email is required</div>
+                        <div *ngIf="LoginForm.controls['email'].errors?.['pattern']">Enter Valid Email address</div>
+                    </div>
+                </div>
+                <div>
+                    <label><strong>Password</strong></label><br>
+                    <input type="password" formControlName="password" placeholder="Password">
+                    <div *ngIf="LoginForm.controls['password'].invalid && (LoginForm.controls['password'].dirty || LoginForm.controls['password'].touched)" class="text-danger">
+                        <div *ngIf="LoginForm.controls['password'].errors?.['required']">Password is required</div>
+                        <div *ngIf="LoginForm.controls['password'].errors?.['pattern']">Enter Valid Password.Password must contain 8 Characters</div>
+                    </div>
+                </div>
+                <label class="mt-2" style="text-decoration: underline;"  [matTooltip]="'Reset your Password'"><small><a><strong>Forgot
+                    Password?</strong></a></small> </label>
+                <div class="action_button">
+                    <span [style.display]="'flex'" [style.justifyContent]="'flex-start'" [style.gap]="'5px'">
+                        <input type="checkbox" id="rememberme">
+                        <label><span><strong>Remember Me</strong></span></label>
+                    </span>
+                    <button class="login_button" type="submit" (click)="OnSubmit()" 
+                    matTooltip="Log in">LOG IN</button>
+                </div>
+            </form>
+        </div>
+        <hr>
+        <strong style="color: white;">Don't have an account ?</strong>
+        <button class="clsbuttonn" (click)="Signup()" matTooltip="Signup for Music.In">SIGN UP FOR MUSIC.IN</button>
+    </div>
+</div>

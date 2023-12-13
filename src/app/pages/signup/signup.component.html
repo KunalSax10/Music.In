@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="card">
+        <h1 style="color: white; margin-top: 20px;">Signup to listen Music on <img src="assets/images/musicc.svg"
+                routerLink="/" alt="logo" width="300" height="auto"></h1>
+        <hr>
+        <div class="login__container" *ngIf="currentStep !== 0">
+            <div class="first" style="margin-top: 30px;">
+                <div class="second" [style.width]="getProgressWidth()"></div>
+            </div><br>
+            <form [formGroup]="form">
+                <div *ngIf="currentStep === 1" style="margin-left: 35px;">
+                    <h5>Step 1 of 3</h5>
+
+                    <label><strong>Email</strong></label><br>
+                    <input type="email" formControlName="email" placeholder="Email address or username">
+                    <div *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)"
+                        class="text-danger">
+                        <div *ngIf="form.controls['email'].errors?.['required']">Email is required</div>
+                        <div *ngIf="form.controls['email'].errors?.['email']">Enter Valid Email address</div>
+                    </div>
+                    <button class="clsbuttonn" (click)="nextStep()"
+                        [disabled]="form.controls['email'].invalid">Next</button>
+
+                    <h6>or</h6>
+                    <button class="clsbutton">
+                        <div class="button-content">
+                            <img src="assets/images/google.png" alt="Google Icon" width="24" height="22">
+                            <span>Continue with Google</span>
+                        </div>
+                    </button>
+                    <button class="clsbutton">
+                        <div class="button-content">
+                            <img src="assets/images/fb.png" alt="Facebook Icon" width="25" height="28">
+                            <span>Continue with Facebook</span>
+                        </div>
+                    </button>
+                    <hr>
+                    <strong style="color: lightgray;margin-left: 90px; cursor: pointer;">Already have account?<a
+                            class="clsbuttonnn" (click)="Login()">Log in here</a></strong>
+                </div>
+                <div *ngIf="currentStep === 2">
+                    <h5>Step 2 of 3</h5>
+                    <h4>Create Password</h4>
+                    <label><strong>Password</strong></label><br>
+                    <input type="password" formControlName="password" placeholder="Password">
+                    <div *ngIf="form.controls['password'].invalid && (form.controls['password'].dirty || form.controls['password'].touched)" class="text-danger">
+                        <div *ngIf="form.controls['password'].errors?.['required']">Password is required</div>
+                    </div>
+                    <button class="clsbuttonn" style="width: 100%;"   [disabled]="form.controls['password'].invalid" (click)="nextStep()">Next</button>
+                </div>
+                <div *ngIf="currentStep === 3">
+                    <h5>Step 3 of 3</h5>
+                    <h4>Tell us about yourself</h4>
+                    <label><strong>Name</strong></label><br>
+                    <input type="text" formControlName="name" placeholder="Enter your name">
+                    <div *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)" class="text-danger">
+                        <div *ngIf="form.controls['name'].errors?.['required']">Name is required</div>
+                    </div>
+                    <div class="date-of-birth">
+                        <label><strong>Date of Birth</strong></label><br>
+                        <div class="date-input">
+                            <input type="date" formControlName="DOB" max="2015-12-31"
+                                placeholder="Select your date of birth">
+                                <div *ngIf="form.controls['DOB'].invalid && (form.controls['DOB'].dirty || form.controls['DOB'].touched)" class="text-danger">
+                                    <div *ngIf="form.controls['DOB'].errors?.['required']">Date of Birth is required</div>
+                                </div>
+                        </div>
+                    </div>
+                    <label><strong>Gender</strong></label><br>
+                    <div class="gender-options" style="color: white;">
+                        <input type="radio" formControlName="gender" value="male" name="gender">Male &nbsp;&nbsp;
+                        <input type="radio" formControlName="gender" value="female" name="gender">Female &nbsp;&nbsp;
+                        <input type="radio" formControlName="gender" value="other" name="gender">Other
+                    </div>
+                    <div *ngIf="form.controls['gender'].invalid && (form.controls['gender'].dirty || form.controls['gender'].touched)" class="text-danger">
+                        <div *ngIf="form.controls['gender'].errors?.['required']">Gender is required</div>
+                    </div>
+                    <hr>
+                    <div class="action_button">
+                        <input type="checkbox" id="rememberme">
+                        <label><span><strong>Accept terms and Conditions</strong></span></label>
+                    </div>
+                    <button class="clsbuttonn" type="submit"  [disabled]="form.controls['password'].invalid" (click)="Onsubmit()">Sign up</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

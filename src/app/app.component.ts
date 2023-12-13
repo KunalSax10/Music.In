@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'musicin';
+
+  constructor(private ngxloader:NgxUiLoaderService){}
+
+  ngOnInit(): void{
+    this.ngxloader.start();
+    window.onload= () =>{
+      this.ngxloader.stop();
+    }
+  }
 }

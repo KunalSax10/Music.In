@@ -1,0 +1,27 @@
+<header>
+  <nav class="spotify__top-nav">
+    <div class="spotify__top-nav_focus-title">
+      <ul class="spotify__top-nav_auth">
+        <li *ngIf="SearchFieldVisible">
+          <input type="search" placeholder="What do you want to listen?" class="searchfield">
+        </li>
+      </ul>
+    </div>
+    <ul class="spotify__top-nav_auth">
+      <li style="margin-top: 13px;cursor: pointer;" *ngIf="!isLoggedIn" (click)="Signup()">Sign up</li>
+      <li class="spotify__top-nav_auth_login" *ngIf="!isLoggedIn" (click)="Login()">Log in</li>
+    </ul>
+    <div class="spotify__top-nav_auth_logout" *ngIf="isLoggedIn">
+      <span>
+        <p [mat-menu-trigger-for]="profile" mat-icon-button style="display: inline-flex;">
+          <mat-icon style="color: rgb(252, 0, 117); margin-top: 3px;">account_box</mat-icon> {{userName}}
+        </p>
+      </span>
+      <mat-menu #profile="matMenu">
+        <button mat-menu-item (click)="Logout()">
+          <mat-icon>exit_to_app</mat-icon>Logout
+        </button>
+      </mat-menu>
+    </div>
+  </nav>
+</header>

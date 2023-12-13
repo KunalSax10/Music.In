@@ -1,0 +1,19 @@
+<nav  class="spotify__top-nav">
+        <img src="assets/images/musicc.svg" routerLink="/" alt="logo" width="180" style="margin-top: 20px; margin-left: 7px;">
+</nav>
+<div class="mp3_player-container container-fluid">
+    <div class="mp3_player-card">
+        <img [src]="song?.thumbnail" style="width: 150px;">
+        <h3>{{ song?.title }}</h3>
+        <p>{{ song?.description }}</p>
+        <audio controls style="margin-top: 30px;" *ngIf="song">
+            <source [src]="song?.Link" type="audio/mpeg" >
+        </audio>  
+        <div *ngIf="!song">
+            <img src="assets/images/musicc.svg" routerLink="/" alt="logo" width="180" style=" margin-left: 7px;">
+            <p>Please log in to listening music</p>
+            <button class="spotify__top-nav_auth_login" (click)="login()" >Log in</button>&nbsp; &nbsp;
+            <button class="spotify__top-nav_auth_login" (click)="signup()" >Sign up</button>
+          </div> 
+    </div>
+</div>

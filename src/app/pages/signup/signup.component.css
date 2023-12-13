@@ -1,0 +1,164 @@
+
+.login__cantainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    gap: 10px;
+}
+h4{
+    color: white;
+}
+input[type="email"],input[type="password"],input[type=text],input[type=date] {
+    padding: 10px;
+    border: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 400px;
+    height: 50px
+}
+
+
+hr{
+    border: 1px solid rgb(110, 109, 109);
+    width: 90%;
+}
+
+h6{
+    color: white;
+    text-align: center;
+    margin: 20px;
+}
+
+.login_button{
+    background-color: rgb(252, 0, 117);
+    color: rgb(255, 255, 255);
+    padding: 14px;
+    border-radius: 28px;
+    width:150px;
+    border: none;
+    font-weight: bold;
+}
+
+.action_button input[type="checkbox"] {
+    width: 16px; /* Set the width to your desired size */
+    height: 16px; /* Set the height to your desired size */
+    margin-right: 5px; /* Add some spacing between the checkbox and the label */
+  }
+
+#rememberme::before {
+    background: #1ed760;
+    width: 25px;
+}
+
+.clsbutton{
+    width: 90%;
+     height: 50px; 
+     border-radius: 28px;
+     background-color: black;
+     color: rgb(255, 255, 255);
+     border: 1px solid rgb(90, 90, 90);
+     font-size: 14px;
+     font-weight: bold;
+     margin: 5px;
+}
+.clsbutton:hover{
+    color: rgb(255, 255, 255);
+    background-color: black;
+    border: 1px solid rgb(248, 248, 248);
+}
+
+.card {
+    width: 80%;
+    height: 100vh;
+    background-color: #191919;
+    margin: 0 auto; 
+   margin-top: 40px;
+    align-items: center; 
+    padding: 10px;
+}
+  
+label{
+    color: white;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.clsbuttonn{
+    width: 90%;
+    height: 50px;
+    border-radius: 28px;
+    background-color:  rgb(252, 0, 117);
+    color: rgb(255, 255, 255);
+    border: 1px solid black;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 20px;
+   
+}
+.clsbutton {
+    display: flex;
+    align-items: center;
+}
+
+.button-content {
+    display: flex;
+    align-items: center;
+    gap: 68px; /* Adjust the gap as needed */
+   padding: 20px;}
+
+.clsbuttonn:hover{
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.stepper {
+    list-style: none;
+    padding: 0;
+}
+
+.stepper li {
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    color: white;
+}
+input:focus {
+    outline: none;
+  }
+
+.step-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    gap: 10px;
+}
+
+.gender-options {
+    display: flex;
+    align-items: center;
+  }
+  
+.gender-options input[type="radio"] {
+    margin-right: 5px;
+}
+h5{
+    color: grey;
+}
+
+.first{
+    height:3px;
+    width: 100%;
+    background:#ffffff;
+}
+
+.second{
+    height:3px;
+    background:#2cdd00;
+}
+
+.clsbuttonnn:hover{
+    color: rgb(252, 0, 117);
+}
+

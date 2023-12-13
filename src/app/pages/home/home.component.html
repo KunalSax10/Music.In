@@ -1,0 +1,71 @@
+<div class="spotify__home-container row">
+    <div class="spotify__home-container_side-bar col-2">
+        <img src="assets/images/musicc.svg" alt="logo" width="180" style="margin-top: 20px;">
+        <div style="margin-top: 10px;">
+            <div class="spotify__home-container_side-bar-item" (click)="NavigatetoSearch('Home')">
+                <i class="fa fa-home"></i><a> Home</a>
+            </div>
+            <div class="spotify__home-container_side-bar-item" (click)="NavigatetoSearch('search')">
+                <i class="fa fa-search"></i><a> Search</a>
+            </div>
+            <div class="spotify__home-container_side-bar-item" (click)="NavigatetoSearch('library')">
+                <i class='fa fa-music'></i> <a> Your Library</a>
+                <div *ngFor="let item of playlists" style="margin-left: 15px; cursor: pointer;">
+                    <div class="playlist-folder" (click)="showPlaylistSongs(item)">
+                        <i class='fa fa-folder' style="margin-top: 5px;"></i>&nbsp;{{item.playlistName}}
+                        <button class="btn btn-dark" mat-icon-button [matMenuTriggerFor]="menu"
+                            style="margin-top: -3px;">
+                            <mat-icon>more_vert</mat-icon>
+                        </button>
+                    </div>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item (click)="editplaylist(item);">Edit</button>
+                        <button mat-menu-item (click)="deleteplay(item.unique)">Delete</button>
+                    </mat-menu>
+                </div>
+            </div>
+            <div class="spotify__home-container_side-bar-item" (click)="NavigatetoSearch('playlist')"
+                (click)="Dialogopen()">
+                <div class="create-playlist-card">
+                    <i class='fa fa-plus'></i>
+                    <a>Create Playlist</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="spotify__home-container_playlist-container col-10">
+        <app-top-nav></app-top-nav>
+        <div [style.paddingTop]="'48px'" class="mt-5 container-fluid">
+            <h4 [style.color]="'white'" [style.padding]="'10px'">All Songs</h4>
+            <div class="playlist_card_collections">
+                <div id="song_card_item" *ngFor="let sc of songs">
+                    <app-song-card 
+                    [song_id]="sc.song_id.toString()"
+                    [playlistthumbnail]="sc.thumbnail" 
+                    [title]="sc.title"
+                    [description]="sc.description"
+                    [Link]="sc.songLink">
+                    </app-song-card>
+                </div>
+            </div>
+        </div>
+        <div [style.paddingTop]="'250px'" class="mt-5 container-fluid" *ngIf="selectedPlaylist">
+            <h4 [style.color]="'white'">Your Playlist</h4>
+            <div class="playlist-header">
+                <h4 [style.color]="'white'" [style.padding]="'10px'">{{selectedPlaylist.playlistName}}</h4>
+            </div>
+            <div class="playlist_card_collections">
+                <div id="song_card_item" *ngFor="let song of selectedPlaylistSongs">
+                    <app-song-card
+                    [song_id]="song.song_id.toString()"
+                    [playlistthumbnail]="song.thumbnail"
+                    [title]="song.title"
+                    [description]="song.description" 
+                    [Link]="song.songLink">
+                    </app-song-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
